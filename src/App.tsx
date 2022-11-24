@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Header from "./Components/Header/Header";
+import Homepage from "./Components/Homepage/Homepage";
+import JobPostForm from "./Components/JobPostForm/JobPostForm";
+import JobsPage from "./Components/JobsPage/JobsPage";
+import Login from "./Components/Login/Login";
+import Profile from "./Components/Profile/Profile";
+import SignupForm from "./Components/Signup/components/SignupForm/SignupForm";
+import Signup from "./Components/Signup/Signup";
+import SingleJobPage from "./Components/SingleJobPage/SingleJobPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signup/:type" element={<SignupForm />} />
+          <Route path="/signup/:type" element={<SignupForm />} />
+          <Route path="/job-post" element={<JobPostForm />} />
+          <Route path="/jobs" element={<JobsPage />} />
+          <Route path="/jobs/single-view/:jobId" element={<SingleJobPage />} />
+          {/* <Route path="/talents/:jobId" element={<TalentsPage />} />
+          <Route path="/freelancers" element={<FreeLancersPage />} /> */}
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      </Router>
+    </Fragment>
   );
-}
+};
 
 export default App;

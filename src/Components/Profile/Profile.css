@@ -1,0 +1,21 @@
+.profile-container {
+  padding: 4rem 5rem;
+}
+
+.profile-wrapper {
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+}
+
+.user-details-section {
+  padding: 1.5rem;
+  display: flex;
+}
+
+.section-padding {
+  padding: 1.5rem;
+}
+
+.profile-left {
+  border-right: 1px solid #e0e0e0;
+}

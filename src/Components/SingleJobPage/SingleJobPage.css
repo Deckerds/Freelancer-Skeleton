@@ -1,0 +1,30 @@
+.jobs-page-height {
+  height: 120vh;
+}
+
+.section {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1.5rem;
+}
+
+.section-last {
+  padding: 1.5rem;
+}
+
+.sub-para {
+  font-size: 0.75rem;
+}
+
+.filters-container {
+  border-top: 1px solid #e0e0e0;
+  padding: 2rem;
+}
+
+.rating-box {
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+.no-data {
+  padding: 1rem 1rem;
+}

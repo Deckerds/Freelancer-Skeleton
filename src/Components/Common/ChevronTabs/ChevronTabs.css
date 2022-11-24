@@ -1,0 +1,109 @@
+.breadcrumb-container {
+  display: flex;
+  justify-content: center;
+}
+
+.breadcrumb {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: -0.1rem !important; /* overlap borders */
+}
+
+/* chevron navigate top section */
+.skew-top {
+  transform: skewX(25deg);
+  border-top: 1px solid #1ba5d8;
+  border-right: 1px solid #1ba5d8;
+  border-left: 1px solid #1ba5d8;
+  height: 2rem;
+  width: 100%;
+}
+
+.breadcrumb:hover .skew-top {
+  border-top: 2px solid #1ba5d8;
+  border-right: 2px solid #1ba5d8;
+  border-left: 2px solid #1ba5d8;
+}
+
+.active-tab-top {
+  background: #1ba5d8;
+  transform: skewX(25deg);
+  height: 2rem;
+  width: 100%;
+}
+
+/* chevron navigate bottom section */
+.skew-bottom {
+  transform: skewX(-25deg);
+  border-bottom: 1px solid #1ba5d8;
+  border-left: 1px solid #1ba5d8;
+  border-right: 1px solid #1ba5d8;
+  height: 2rem;
+  width: 100%;
+}
+
+.active-tab-bottom {
+  background: #1ba5d8;
+  transform: skewX(-25deg);
+  height: 2rem;
+  width: 100%;
+}
+
+.breadcrumb:hover .skew-bottom {
+  border-bottom: 2px solid #1ba5d8;
+  border-right: 2px solid #1ba5d8;
+  border-left: 2px solid #1ba5d8;
+}
+
+/* remove overlapping borders */
+#breadcrumb-start > .skew-top,
+#breadcrumb-start > .skew-bottom {
+  border-right: 1px solid transparent;
+}
+
+#breadcrumb-start:hover > .skew-top,
+#breadcrumb-start:hover > .skew-bottom {
+  border-right: 2px solid #1ba5d8;
+}
+
+#breadcrumb-second > .skew-top,
+#breadcrumb-second > .skew-bottom {
+  border-right: 1px solid transparent;
+}
+
+#breadcrumb-second:hover > .skew-top,
+#breadcrumb-second:hover > .skew-bottom {
+  border-right: 2px solid #1ba5d8;
+}
+
+#breadcrumb-end > .skew-top,
+#breadcrumb-end > .skew-bottom {
+  border-left: 1px solid transparent;
+}
+
+#breadcrumb-end:hover > .skew-top,
+#breadcrumb-end:hover > .skew-bottom {
+  border-left: 2px solid #1ba5d8;
+}
+
+.span-text {
+  position: absolute;
+  margin-top: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.active-text {
+  color: white;
+  z-index: 100;
+}
+
+.breadcrumb:hover .span-text {
+  color: #1ba5d8;
+}
+
+.breadcrumb:hover .active-text {
+  color: white;
+}

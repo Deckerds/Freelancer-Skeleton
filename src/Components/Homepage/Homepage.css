@@ -1,0 +1,22 @@
+.home-container {
+  padding: 0rem 5rem;
+}
+
+.home-image {
+  margin-top: 2rem;
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+.sponser-img {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 900px) {
+  .home-container {
+    padding: 0rem 0.75rem;
+  }
+}

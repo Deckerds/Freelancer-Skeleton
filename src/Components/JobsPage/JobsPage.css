@@ -1,0 +1,25 @@
+.jobs-container {
+  display: flex;
+  padding: 4rem 5rem;
+}
+
+.single-job-container {
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.single-job-container:hover {
+  background: #f2f7f2;
+}
+
+.single-job-container:hover > :first-child {
+  color: hsl(206deg 100% 40%);
+}
+
+@media only screen and (max-width: 760px) {
+  .jobs-container {
+    display: flex;
+    padding: 1rem 0.25rem;
+  }
+}
