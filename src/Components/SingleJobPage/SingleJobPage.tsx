@@ -28,7 +28,7 @@ const SingleJobPage = () => {
   return (
     <Col md={12} className="main-container jobs-page-height mb-5">
       <Col md={12} className="mb-5">
-        <h4>{job.header}</h4>
+        <p className="header">{job.header}</p>
       </Col>
       <Col xs={12} md={12} className="mb-3">
         <RectangularTabs activeTab={activeTab} setActiveTab={setActiveTab} />

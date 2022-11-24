@@ -17,8 +17,8 @@ const ScreenFour = ({
   singleBudget,
 }) => {
   return (
-    <Fragment>
-      <Col className="screen-container" md={6}>
+    <Col className="screen-container" md={6}>
+      <Col md={12} className="content-container">
         <div className="d-flex">
           <div
             className={`box-budget ${
@@ -136,17 +136,17 @@ const ScreenFour = ({
             </p>
           </div>
         )}
-        <div className="d-flex justify-content-end mt-3">
-          <CommonButton
-            btnBorder
-            text="Back"
-            className="me-2"
-            onClick={() => setScreen(3)}
-          />
-          <CommonButton text="Description" onClick={() => setScreen(5)} />
-        </div>
       </Col>
-    </Fragment>
+      <Col className="d-flex justify-content-end">
+        <CommonButton
+          btnBorder
+          text="Back"
+          className="me-2"
+          onClick={() => setScreen(3)}
+        />
+        <CommonButton text="Description" onClick={() => setScreen(5)} />
+      </Col>
+    </Col>
   );
 };
 

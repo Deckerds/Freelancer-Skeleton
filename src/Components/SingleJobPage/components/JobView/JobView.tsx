@@ -35,21 +35,27 @@ const JobView = ({ job }) => {
         </Col>
         <Col className="section d-lg-flex" md={12}>
           <Col className="d-flex align-items-start" xs={12} md={4}>
-            <MonetizationOnIcon style={{ fontSize: "1rem" }} className="me-2" />
+            <MonetizationOnIcon
+              style={{ fontSize: "1.25rem" }}
+              className="me-2"
+            />
             <div>
               <p className="mb-0 small-font">{job.budget}</p>
               <p className="mb-0 sub-para light-gray">{job.budgetType}</p>
             </div>
           </Col>
           <Col className="d-flex align-items-start mb-2" xs={12} md={4}>
-            <CalendarMonthIcon style={{ fontSize: "1rem" }} className="me-2" />
+            <CalendarMonthIcon
+              style={{ fontSize: "1.25rem" }}
+              className="me-2"
+            />
             <div>
               <p className="mb-0 small-font">{job.scope}</p>
               <p className="mb-0 sub-para light-gray">Project Length</p>
             </div>
           </Col>
           <Col className="d-flex align-items-start mb-2" xs={12} md={4}>
-            <PsychologyIcon style={{ fontSize: "1rem" }} className="me-2" />
+            <PsychologyIcon style={{ fontSize: "1.25rem" }} className="me-2" />
             <div>
               <p className="mb-0 small-font">{job.expertise}</p>
               <p className="mb-0 sub-para light-gray">

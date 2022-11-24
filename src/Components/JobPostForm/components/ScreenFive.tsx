@@ -11,8 +11,8 @@ const ScreenFive = ({
   setDescription,
 }) => {
   return (
-    <Fragment>
-      <Col className="screen-container" md={6}>
+    <Col className="screen-container" md={6}>
+      <Col md={12} className="content-container">
         <h6 className="mb-0">Add a title</h6>
         <TextField
           className="mt-2 mb-3"
@@ -36,18 +36,17 @@ const ScreenFive = ({
           See examples of effective job descriptions
         </p>
         <CommonButton btnBorder text="Attach File" className="mt-2" />
-
-        <div className="d-flex justify-content-end mt-3">
-          <CommonButton
-            btnBorder
-            text="Back"
-            onClick={() => setScreen(4)}
-            className="me-2"
-          />
-          <CommonButton text="Review Job Post" onClick={() => setScreen(6)} />
-        </div>
       </Col>
-    </Fragment>
+      <Col className="d-flex justify-content-end">
+        <CommonButton
+          btnBorder
+          text="Back"
+          onClick={() => setScreen(4)}
+          className="me-2"
+        />
+        <CommonButton text="Review Job Post" onClick={() => setScreen(6)} />
+      </Col>
+    </Col>
   );
 };
 

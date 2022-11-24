@@ -27,8 +27,8 @@ const ScreenTwo = ({
   };
 
   return (
-    <Fragment>
-      <Col className="screen-container" md={6} xs={12}>
+    <Col className="screen-container" md={6} xs={12}>
+      <Col md={12} className="content-container">
         <h6>Search skills or add your own</h6>
         <TextField
           className="mt-3"
@@ -70,21 +70,21 @@ const ScreenTwo = ({
               />
             ))}
         </div>
-        <div className="d-flex justify-content-end mt-3">
-          <CommonButton
-            btnBorder
-            text="Back"
-            className="me-2"
-            onClick={() => setScreen(1)}
-          />
-          <CommonButton
-            disabled={selectedChips.length < 1}
-            onClick={() => setScreen(3)}
-            text="Next: Scope"
-          />
-        </div>
       </Col>
-    </Fragment>
+      <Col className="d-flex justify-content-end">
+        <CommonButton
+          btnBorder
+          text="Back"
+          className="me-2"
+          onClick={() => setScreen(1)}
+        />
+        <CommonButton
+          disabled={selectedChips.length < 1}
+          onClick={() => setScreen(3)}
+          text="Next: Scope"
+        />
+      </Col>
+    </Col>
   );
 };
 

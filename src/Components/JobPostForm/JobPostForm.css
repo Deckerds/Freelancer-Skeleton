@@ -11,6 +11,11 @@
   padding: 1rem 6rem;
 }
 
+.content-container {
+  min-height: 30rem;
+  margin-bottom: 1rem;
+}
+
 .box-budget {
   display: flex;
   flex-direction: column;
