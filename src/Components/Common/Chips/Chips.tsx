@@ -2,7 +2,7 @@ import React from "react";
 import { Chip } from "@mui/material";
 
 interface ChipsProps {
-  key: string | number;
+  key?: string | number;
   label: string;
   onDelete?: () => void;
   onClick?: () => void;

@@ -64,3 +64,30 @@ export const allTalents = [
     success: 100,
   },
 ];
+
+export const jobCategories = [
+  {
+    type: "React",
+    categories: [
+      "Front-end development",
+      "Full-stack development",
+      "Mobile Development",
+    ],
+  },
+  {
+    type: "Graphic",
+    categories: ["Graphic Design", "Image Editing", "Illustration"],
+  },
+  {
+    type: "Video",
+    categories: ["Video Editing", "Video Production", "Videography"],
+  },
+  {
+    type: "English",
+    categories: [
+      "General Translation Services",
+      "Transcription",
+      "Copy Editing",
+    ],
+  },
+];

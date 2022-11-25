@@ -1,10 +1,12 @@
-import React from "react";
-import { Divider } from "@mui/material";
+import React, { useState } from "react";
+import { Divider, MenuItem, Radio, Select } from "@mui/material";
 import { Col } from "reactstrap";
 import EditButton from "src/Components/Common/EditButton/EditButton";
 import Chips from "src/Components/Common/Chips/Chips";
 import { useNavigate } from "react-router";
 import CommonButton from "src/Components/Common/Buttons/CommonButton";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import moment from "moment";
 
 const ScreenSix = ({
@@ -19,8 +21,20 @@ const ScreenSix = ({
   budgetFrom,
   budgetTo,
   singleBudget,
+  category,
 }) => {
   const navigate = useNavigate();
+
+  const [timeRequirement, setTimeRequirement] = useState(
+    "More than 30 hrs/week"
+  );
+  const [location, setLocation] = useState("Worldwide");
+  const [expand, setExpand] = useState(false);
+
+  const toggleExpand = () => {
+    setExpand(!expand);
+  };
+
   const onSubmitJobPost = () => {
     const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
     const data = {
@@ -31,6 +45,9 @@ const ScreenSix = ({
       scope,
       expertise,
       budgetType,
+      category,
+      location,
+      timeRequirement,
       budget:
         budgetType === "Hourly"
           ? `$${budgetFrom} - $${budgetTo}/hr`
@@ -72,7 +89,7 @@ const ScreenSix = ({
           md={12}
           className="d-flex justify-content-between  align-items-center mb-3"
         >
-          <p className="default-text">Illustration</p>
+          <p className="default-text">{category}</p>
           <EditButton />
         </Col>
         <Col
@@ -111,6 +128,99 @@ const ScreenSix = ({
             </p>
           </Col>
           <EditButton />
+        </Col>
+        <Divider style={{ background: "black" }} />
+        <Col md={12} className="mt-3 mb-3">
+          <div className="d-flex justify-content-between align-items-center mb-2">
+            <h6 className="mb-0">Advanced Preferences</h6>
+            {!expand && (
+              <KeyboardArrowDownIcon
+                className="cursor-pointer"
+                onClick={() => toggleExpand()}
+              />
+            )}
+            {expand && (
+              <KeyboardArrowUpIcon
+                className="cursor-pointer"
+                onClick={() => toggleExpand()}
+              />
+            )}
+          </div>
+          {expand && (
+            <Col md={12} className="d-flex">
+              <Col md={4}>
+                <p className="top-text">Time requirement</p>
+                <div className="d-flex align-items-center">
+                  <Radio
+                    onClick={() => setTimeRequirement("More than 30 hrs/week")}
+                    checked={timeRequirement === "More than 30 hrs/week"}
+                    value={"More than 30 hrs/week"}
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                    sx={{
+                      "&.Mui-checked": {
+                        color: "#1ba5d8",
+                      },
+                    }}
+                  />
+                  <p className="small-text">More than 30 hrs/week</p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <Radio
+                    onClick={() => setTimeRequirement("Less than 30 hrs/week")}
+                    checked={timeRequirement === "Less than 30 hrs/week"}
+                    value={"Less than 30 hrs/week"}
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                    sx={{
+                      "&.Mui-checked": {
+                        color: "#1ba5d8",
+                      },
+                    }}
+                  />
+                  <p className="small-text">Less than 30 hrs/week</p>
+                </div>
+                <div className="d-flex align-items-center">
+                  <Radio
+                    onClick={() => setTimeRequirement("I'm not sure")}
+                    checked={timeRequirement === "I'm not sure"}
+                    value={"I'm not sure"}
+                    name="radio-buttons"
+                    inputProps={{ "aria-label": "A" }}
+                    sx={{
+                      "&.Mui-checked": {
+                        color: "#1ba5d8",
+                      },
+                    }}
+                  />
+                  <p className="small-text">I'm not sure</p>
+                </div>
+              </Col>
+              <Col md={4}>
+                <p className="top-text">Location</p>
+                <Select
+                  className="sort-dropdown"
+                  displayEmpty
+                  fullWidth
+                  value={location}
+                  defaultValue={location}
+                  onChange={(e) => {
+                    setLocation(e.target.value);
+                  }}
+                >
+                  <MenuItem className="default-text" selected value="Worldwide">
+                    Worldwide
+                  </MenuItem>
+                  <MenuItem className="default-text" value="Sri Lanka">
+                    Sri Lanka
+                  </MenuItem>
+                  <MenuItem className="default-text" value="United States">
+                    United States
+                  </MenuItem>
+                </Select>
+              </Col>
+            </Col>
+          )}
         </Col>
         <Divider style={{ background: "black" }} />
         <Col className="d-flex justify-content-end mt-3">

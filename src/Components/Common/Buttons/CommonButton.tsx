@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 interface CommonBtnProps {
   text: string;
   btnBorder?: boolean;
-  onClick?: () => void;
+  onClick?: (event?: any) => void;
   className?: string;
   disabled?: boolean;
 }
@@ -14,7 +14,7 @@ const CommonButton = (props: CommonBtnProps) => {
     <Button
       disabled={props.disabled}
       id={props.btnBorder ? "border-common-button" : "common-button"}
-      onClick={() => props.onClick()}
+      onClick={(e) => props.onClick(e)}
       className={props.className}
     >
       {props.text}

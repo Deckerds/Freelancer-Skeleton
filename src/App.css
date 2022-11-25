@@ -108,6 +108,10 @@ input {
   width: 8rem;
 }
 
+.box-section {
+  padding: 1.5rem;
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

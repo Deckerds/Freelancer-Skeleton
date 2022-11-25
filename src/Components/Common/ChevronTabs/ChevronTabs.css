@@ -1,6 +1,8 @@
 .breadcrumb-container {
   display: flex;
   justify-content: center;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 
 .breadcrumb {

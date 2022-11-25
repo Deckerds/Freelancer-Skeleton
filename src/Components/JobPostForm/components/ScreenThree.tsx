@@ -77,7 +77,7 @@ const ScreenThree = ({
           </p>
         </div>
         {selectedValue !== "" && (
-          <div>
+          <div className="mt-3">
             <h6>How long will your work take?</h6>
             <div className="d-flex align-items-center">
               <Radio
@@ -127,7 +127,7 @@ const ScreenThree = ({
           </div>
         )}
         {scope !== "" && (
-          <div>
+          <div className="mt-3">
             <h6>What level of experience will it need?</h6>
             <div className="d-flex align-items-center">
               <Radio

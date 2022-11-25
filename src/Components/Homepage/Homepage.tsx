@@ -11,7 +11,7 @@ const Homepage = () => {
   const navigate = useNavigate();
   return (
     <Col className="d-flex home-container">
-      <Col item xs={12} md={5} className="mt-5 ps-5">
+      <Col xs={12} md={5} className="mt-5 ps-5">
         <p
           style={{
             fontSize: "4rem",
@@ -73,13 +73,7 @@ const Homepage = () => {
             />
           </Fragment>
         )}
-        <Col
-          item
-          xs={12}
-          md={12}
-          className="mt-5"
-          style={{ marginBottom: "8rem" }}
-        >
+        <Col xs={12} md={12} className="mt-5" style={{ marginBottom: "8rem" }}>
           <p className="light-gray top-text">Trusted By</p>
           <div className="d-flex align-items-center mt-1">
             <img
@@ -111,7 +105,6 @@ const Homepage = () => {
         </Col>
       </Col>
       <Col
-        item
         xs={12}
         md={7}
         className="d-flex justify-content-center"

@@ -2,10 +2,8 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate, useLocation } from "react-router";
 import LogoIcon from "../../assets/logo.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
 import "./Header.css";
-import { Badge, Divider, IconButton, Menu, MenuItem } from "@mui/material";
-import moment from "moment";
+import { Divider, IconButton, Menu, MenuItem } from "@mui/material";
 import CommonButton from "../Common/Buttons/CommonButton";
 
 const Header = () => {
@@ -13,21 +11,6 @@ const Header = () => {
   const location = useLocation();
 
   const [type, setType] = useState("");
-  const [invisible, setInvisible] = React.useState(false);
-
-  const [invitations, setInvitations] = useState([]);
-
-  useEffect(() => {
-    setInvitations(JSON.parse(localStorage.getItem("invitations")) || []);
-  }, []);
-
-  useEffect(() => {
-    if (invitations.length > 0) {
-      setInvisible(false);
-    } else {
-      setInvisible(true);
-    }
-  }, [invitations]);
 
   useEffect(() => {
     setType(location?.pathname?.split("/")[2]);
@@ -42,18 +25,6 @@ const Header = () => {
 
   const handleClose = () => {
     setAnchorEl(null);
-  };
-
-  const [anchorElNotifications, setAnchorElNotifications] =
-    React.useState<null | HTMLElement>(null);
-  const openNotifications = Boolean(anchorElNotifications);
-
-  const handleClickNotifications = (event: React.MouseEvent<any>) => {
-    setAnchorElNotifications(event.currentTarget);
-  };
-
-  const handleCloseNotifications = () => {
-    setAnchorElNotifications(null);
   };
 
   return (
@@ -166,44 +137,6 @@ const Header = () => {
           )}
           {localStorage.getItem("isAuth") === "true" && (
             <Fragment>
-              <IconButton
-                onClick={handleClickNotifications}
-                color="primary"
-                aria-label="upload notifications"
-                component="label"
-              >
-                <Badge color="error" variant="dot" invisible={invisible}>
-                  <MailIcon />
-                </Badge>
-              </IconButton>
-              <Menu
-                id="basic-menu-2"
-                anchorEl={anchorElNotifications}
-                open={openNotifications}
-                onClose={handleCloseNotifications}
-                MenuListProps={{
-                  "aria-labelledby": "basic-button",
-                }}
-              >
-                {invitations.map((invite) => (
-                  <MenuItem
-                    key={invite.id}
-                    onClick={() => {
-                      handleCloseNotifications();
-                      navigate("/user/invitations");
-                    }}
-                    className="d-flex flex-column border-bottom"
-                  >
-                    <p className="light-gray default-text align-self-start">
-                      {invite.invitation}
-                    </p>
-                    <p className="small-text light-gray align-self-end">
-                      {moment(new Date(invite.inviteTime)).fromNow()}
-                    </p>
-                  </MenuItem>
-                ))}
-              </Menu>
-
               <IconButton
                 onClick={handleClick}
                 color="primary"

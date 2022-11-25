@@ -19,6 +19,7 @@ const JobPostForm = () => {
   the first thing they’ll see, so make it count!`);
 
   const [header, setHeader] = useState("");
+  const [category, setCategory] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
   const [scope, setScope] = useState("");
   const [expertise, setExpertise] = useState("");
@@ -37,6 +38,57 @@ const JobPostForm = () => {
     { id: 10, name: "HTML" },
     { id: 11, name: "CSS" },
   ]);
+
+  useEffect(() => {
+    if (
+      category === "Front-end development" ||
+      category === "Full-stack development" ||
+      category === "Mobile Development"
+    ) {
+      setChips([
+        { id: 1, name: "React" },
+        { id: 2, name: "JavaScript" },
+        { id: 3, name: "Redux" },
+        { id: 4, name: "CSS" },
+        { id: 5, name: "HTML" },
+        { id: 6, name: "TypeScript" },
+        { id: 7, name: "NodeJS" },
+      ]);
+    } else if (
+      category === "Graphic Design" ||
+      category === "Image Editing" ||
+      category === "Illustration"
+    ) {
+      setChips([
+        { id: 1, name: "Graphic Design" },
+        { id: 2, name: "Adobe Photoshop" },
+        { id: 3, name: "Logo Design" },
+        { id: 4, name: "Facebook" },
+        { id: 4, name: "Adobe Illustrator" },
+      ]);
+    } else if (
+      category === "Video Editing" ||
+      category === "Video Production" ||
+      category === "Videography"
+    ) {
+      setChips([
+        { id: 1, name: "Video Editing" },
+        { id: 2, name: "Video Production" },
+        { id: 3, name: "Videography" },
+        { id: 4, name: "Video Commercial" },
+      ]);
+    } else {
+      setChips([
+        { id: 1, name: "English" },
+        { id: 2, name: "Proofreading" },
+        { id: 3, name: "Content Writing" },
+        { id: 4, name: "Writing" },
+        { id: 4, name: "Fluent" },
+        { id: 4, name: "English to Japanese" },
+      ]);
+    }
+  }, [category]);
+
   const [selectedChips, setSelectedChips] = useState([]);
   const [budgetFrom, setBudgetFrom] = useState("");
   const [budgetTo, setBudgetTo] = useState("");
@@ -93,6 +145,8 @@ const JobPostForm = () => {
                 setScreen={setScreen}
                 header={header}
                 setHeader={setHeader}
+                setCategory={setCategory}
+                category={category}
               />
             )}
             {screen === 2 && (
@@ -152,6 +206,7 @@ const JobPostForm = () => {
             budgetFrom={budgetFrom}
             budgetTo={budgetTo}
             singleBudget={singleBudget}
+            category={category}
           />
         )}
       </Col>
