@@ -113,7 +113,7 @@ const JobsPage = () => {
               color="info"
               value="Entry"
             />
-            <p className="type-text mb-0">Entry Level</p>
+            <p className="type-text">Entry Level</p>
           </div>
           <div className="d-flex align-items-center">
             <Checkbox
@@ -122,7 +122,7 @@ const JobsPage = () => {
               color="info"
               value="Intermediate"
             />
-            <p className="type-text mb-0">Intermediate Level</p>
+            <p className="type-text">Intermediate Level</p>
           </div>
           <div className="d-flex align-items-center">
             <Checkbox
@@ -131,7 +131,7 @@ const JobsPage = () => {
               color="info"
               value="Expert"
             />
-            <p className="type-text mb-0">Expert Level</p>
+            <p className="type-text">Expert Level</p>
           </div>
         </Col>
         <Col md={12} className="mt-3 border-bottom">
@@ -143,7 +143,7 @@ const JobsPage = () => {
               color="info"
               value="1 to 3 months"
             />
-            <p className="type-text mb-0">1 to 3 months</p>
+            <p className="type-text">1 to 3 months</p>
           </div>
           <div className="d-flex align-items-center">
             <Checkbox
@@ -152,7 +152,7 @@ const JobsPage = () => {
               color="info"
               value="3 to 6 months"
             />
-            <p className="type-text mb-0">3 to 6 months</p>
+            <p className="type-text">3 to 6 months</p>
           </div>
           <div className="d-flex align-items-center">
             <Checkbox
@@ -161,7 +161,7 @@ const JobsPage = () => {
               color="info"
               value={"More than 6 months"}
             />
-            <p className="type-text mb-0">More than 6 months</p>
+            <p className="type-text">More than 6 months</p>
           </div>
         </Col>
         <Col md={12} className="mt-3 d-flex justify-content-end pe-3">
@@ -190,7 +190,7 @@ const JobsPage = () => {
           />
         </Col>
         <Col md={12} className="d-flex align-items-center justify-content-end">
-          <p className="mb-0 small-font me-2">Sort :</p>
+          <p className="default-text me-2">Sort :</p>
           <Select
             className="me-3 sort-dropdown"
             displayEmpty
@@ -201,10 +201,10 @@ const JobsPage = () => {
               setSortValue(e.target.value);
             }}
           >
-            <MenuItem className="small-font" selected value="newest">
+            <MenuItem className="default-text" selected value="newest">
               Newest
             </MenuItem>
-            <MenuItem className="small-font" value="client rating">
+            <MenuItem className="default-text" value="client rating">
               Client Rating
             </MenuItem>
           </Select>
@@ -220,11 +220,11 @@ const JobsPage = () => {
               key={job.id}
             >
               <h5>{getHighlightedText(job.header, highlightedText)}</h5>
-              <p className="small-font">
+              <p className="default-text">
                 <b>{`${job.budgetType}: ${job.budget} - `}</b>
                 {`${job.expertise} - Est. Time: ${job.scope}`}
               </p>
-              <p className="small-font">
+              <p className="default-text">
                 {getHighlightedText(job.description, highlightedText)}
               </p>
               {job?.chips.length > 0 &&

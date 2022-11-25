@@ -77,15 +77,15 @@ const JobPostForm = () => {
             <Col xs={12} md={6} className="job-left-screen">
               {screen < 5 && (
                 <div className="d-flex">
-                  <p className="small-font light-gray me-4">{`${screen}/4`}</p>
-                  <p className="small-font light-gray">{title}</p>
+                  <p className="default-text light-gray me-4">{`${screen}/4`}</p>
+                  <p className="default-text light-gray">{title}</p>
                 </div>
               )}
               <h3 style={{ color: "#13544e", fontSize: "2.25rem" }}>
                 {mainHeading}
               </h3>
 
-              <p className="small-font light-gray mt-3">{subHeading}</p>
+              <p className="default-text light-gray mt-3">{subHeading}</p>
             </Col>
 
             {screen === 1 && (

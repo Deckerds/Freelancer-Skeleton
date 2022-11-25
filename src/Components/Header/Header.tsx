@@ -68,7 +68,7 @@ const Header = () => {
         <div className="nav-pages">
           <p
             // onClick={() => navigate("/freelancers")}
-            className="mb-0 small-font nav-text"
+            className="default-text nav-text"
           >
             Find Talent
           </p>
@@ -81,7 +81,7 @@ const Header = () => {
           />
           <p
             onClick={() => navigate("/jobs")}
-            className="mb-0 small-font nav-text"
+            className="default-text nav-text"
           >
             Categories
           </p>
@@ -92,7 +92,7 @@ const Header = () => {
             flexItem
             style={{ background: "black" }}
           />
-          <p className="mb-0 small-font nav-text">Services</p>
+          <p className=" default-text nav-text">Services</p>
           <Divider
             className="mx-3"
             orientation="vertical"
@@ -100,7 +100,7 @@ const Header = () => {
             flexItem
             style={{ background: "black" }}
           />
-          <p className="mb-0 small-font nav-text">Blog</p>
+          <p className="default-text nav-text">Blog</p>
           <Divider
             className="mx-3"
             orientation="vertical"
@@ -118,7 +118,7 @@ const Header = () => {
               <Fragment>
                 <p
                   onClick={() => navigate("/login")}
-                  className="nav-item small-font"
+                  className="nav-item default-text"
                 >
                   Log In
                 </p>
@@ -194,10 +194,10 @@ const Header = () => {
                     }}
                     className="d-flex flex-column border-bottom"
                   >
-                    <p className="light-gray small-font mb-0 align-self-start">
+                    <p className="light-gray default-text align-self-start">
                       {invite.invitation}
                     </p>
-                    <p className="mini-font light-gray mb-0 align-self-end">
+                    <p className="small-text light-gray align-self-end">
                       {moment(new Date(invite.inviteTime)).fromNow()}
                     </p>
                   </MenuItem>

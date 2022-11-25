@@ -11,12 +11,12 @@ const HiresView = () => {
           activeKey={tab}
           onSelect={(tab) => setTab(tab)}
           defaultActiveKey="search"
-          className="small-font mb-4 mx-3 my-3"
+          className="default-text mb-4 mx-3 my-3"
         >
           <Tab eventKey="search" title="Offers">
             <Col md={12} className="no-data">
               <p className="text-center">You don't have any offers yet</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Interview promising candidates and make them an offer.
               </p>
             </Col>
@@ -24,7 +24,7 @@ const HiresView = () => {
           <Tab eventKey="hire" title="Hired">
             <Col md={12} className="no-data">
               <p className="text-center">You don't have any hires yet</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Interview promising candidates and make them an offer.
               </p>
             </Col>

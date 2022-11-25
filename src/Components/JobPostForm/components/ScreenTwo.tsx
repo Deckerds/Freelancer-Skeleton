@@ -42,13 +42,13 @@ const ScreenTwo = ({
         />
         <div className="d-flex align-items-center mt-1">
           <StarsIcon style={{ color: "#1ba5d8", fontSize: "1rem" }} />
-          <p className="small-font mb-0 ms-1 text-success">
+          <p className="default-text ms-1 text-success">
             For the best results, add 3-5 skills
           </p>
         </div>
         {selectedChips?.length > 0 && (
           <div className="mt-3">
-            <p className="mb-1 small-font">Selected skills</p>
+            <p className="mb-1 default-text">Selected skills</p>
             {selectedChips?.length > 0 &&
               selectedChips.map((chip) => (
                 <Chips

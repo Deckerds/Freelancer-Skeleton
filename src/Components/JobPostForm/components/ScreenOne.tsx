@@ -15,14 +15,14 @@ const ScreenOne = ({ setScreen, setHeader, header }) => {
           value={header}
           onChange={(e) => setHeader(e.target.value)}
         />
-        <p className="mt-4 mb-0 font-weight-bold">Example titles</p>
-        <li className="small-font light-gray ms-2 mt-2">
+        <p className="mt-4 font-weight-bold">Example titles</p>
+        <li className="default-text light-gray ms-2 mt-2">
           UX/UI designer to bring website mockup and prototype to life
         </li>
-        <li className="small-font light-gray ms-2 mt-1">
+        <li className="default-text light-gray ms-2 mt-1">
           Video editor needed to create whiteboard explainer video
         </li>
-        <li className="small-font light-gray ms-2 mt-1">
+        <li className="default-text light-gray ms-2 mt-1">
           UX designer with e-commerce experience to support app development
         </li>
         <div className="d-flex justify-content-end mt-3"></div>

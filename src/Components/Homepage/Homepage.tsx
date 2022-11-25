@@ -13,7 +13,6 @@ const Homepage = () => {
     <Col className="d-flex home-container">
       <Col item xs={12} md={5} className="mt-5 ps-5">
         <p
-          className="common-font"
           style={{
             fontSize: "4rem",
             color: "#1ba5d8",
@@ -81,7 +80,7 @@ const Homepage = () => {
           className="mt-5"
           style={{ marginBottom: "8rem" }}
         >
-          <p className="light-gray mb-0">Trusted By</p>
+          <p className="light-gray top-text">Trusted By</p>
           <div className="d-flex align-items-center mt-1">
             <img
               src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload//c_fit/general/logobar/colored/microsoft.svg"

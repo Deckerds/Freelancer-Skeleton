@@ -71,7 +71,7 @@ const ProposalTab = ({ job }) => {
           activeKey={tab}
           onSelect={(tab) => setTab(tab)}
           defaultActiveKey="proposal"
-          className="small-font mb-4 mx-3 my-3"
+          className="default-text mb-4 mx-3 my-3"
         >
           <Tab eventKey="proposal" title={`All Proposals (${talents.length})`}>
             <Col md={12} className="search-container">
@@ -100,7 +100,7 @@ const ProposalTab = ({ job }) => {
                 text="Filters"
               />
               <Col className="d-flex align-items-center justify-content-end">
-                <p className="small-font mb-0 me-3">Sort:</p>
+                <p className="default-text  me-3">Sort:</p>
                 <Select
                   className="me-3 sort-dropdown"
                   displayEmpty
@@ -110,13 +110,23 @@ const ProposalTab = ({ job }) => {
                     setSortValue(e.target.value);
                   }}
                 >
-                  <MenuItem className="small-font" selected value="Best match">
+                  <MenuItem
+                    className="default-text"
+                    selected
+                    value="Best match"
+                  >
                     Best match
                   </MenuItem>
-                  <MenuItem className="small-font" value="Newest Applications">
+                  <MenuItem
+                    className="default-text"
+                    value="Newest Applications"
+                  >
                     Newest Applications
                   </MenuItem>
-                  <MenuItem className="small-font" value="Oldest Applications">
+                  <MenuItem
+                    className="default-text"
+                    value="Oldest Applications"
+                  >
                     Oldest Applications
                   </MenuItem>
                 </Select>
@@ -138,7 +148,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         Any amount earned
                       </p>
                     </div>
@@ -152,7 +162,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $1+ earned
                       </p>
                     </div>
@@ -166,7 +176,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $100+ earned
                       </p>
                     </div>
@@ -180,7 +190,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $1k+ earned
                       </p>
                     </div>
@@ -198,7 +208,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         TOP RATED
                       </p>
                     </div>
@@ -212,7 +222,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         TOP RATED PLUS
                       </p>
                     </div>
@@ -226,7 +236,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         80% & up
                       </p>
                     </div>
@@ -240,7 +250,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         90% & up
                       </p>
                     </div>
@@ -258,7 +268,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         Any hourly rate
                       </p>
                     </div>
@@ -272,7 +282,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $10 and below
                       </p>
                     </div>
@@ -286,7 +296,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $10 - $30
                       </p>
                     </div>
@@ -300,7 +310,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $30 - $60
                       </p>
                     </div>
@@ -318,7 +328,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         Any hours
                       </p>
                     </div>
@@ -332,7 +342,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         1+ hours billed
                       </p>
                     </div>
@@ -346,7 +356,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         100+ hours billed
                       </p>
                     </div>
@@ -360,7 +370,7 @@ const ProposalTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         1,000+ hours billed
                       </p>
                     </div>
@@ -384,7 +394,7 @@ const ProposalTab = ({ job }) => {
           <Tab eventKey="shortlisted" title="Shortlisted">
             <Col md={12} className="no-data">
               <p className="text-center">You have no shortlisted proposals</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Use the shortlist feature to add your preferred proposals.
               </p>
             </Col>
@@ -392,7 +402,7 @@ const ProposalTab = ({ job }) => {
           <Tab eventKey="messaged" title="Messaged">
             <Col md={12} className="no-data">
               <p className="text-center">You have no messages</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Get the conversation started by asking your favorite candidates
                 a question.
               </p>
@@ -403,7 +413,7 @@ const ProposalTab = ({ job }) => {
               <p className="text-center">
                 Find all your archived, declined, and withdrawn proposals here
               </p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Candidates won't be notified when you archive their proposals.
               </p>
             </Col>

@@ -18,14 +18,14 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
   const getRatingData = (rating) => {
     if (rating === "top") {
       return (
-        <p className="small-font mb-0">
+        <p className="default-text">
           <MilitaryTechIcon style={{ fontSize: "1.5rem", color: "#f1367a" }} />
           Top Rated Plus
         </p>
       );
     } else if (rating === "middle") {
       return (
-        <p className="small-font mb-0">
+        <p className="default-text">
           <MilitaryTechIcon style={{ fontSize: "1.5rem", color: "#0b83b2" }} />
           Top Rated
         </p>
@@ -47,13 +47,13 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
           availability={talent.availability}
         />
         <div className="ms-3">
-          <p className="mb-0">
+          <p className="top-text">
             {getHighlightedText(talent.name, highlightedText)}
           </p>
-          <p className="small-font mb-0 restrict-mobile-display">
+          <p className="default-text restrict-mobile-display">
             {talent.shortDesc}
           </p>
-          <p className="mini-font mb-0 light-gray">{talent.country}</p>
+          <p className="small-text light-gray">{talent.country}</p>
         </div>
         <div className="d-flex ms-auto">
           <CommonButton
@@ -69,16 +69,16 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
         </div>
       </Col>
       <Col md={12} className="rating-box d-flex justify-content-between">
-        <p className="small-font mb-0">{talent.price}</p>
+        <p className="default-text">{talent.price}</p>
         <Col md={2} className="ms-auto me-5">
           <p className="mb-0 align-self-center">{talent.success}%</p>
           <LinearProgress variant="determinate" value={talent.success} />
-          <p className="mb-0 mini-font light-gray">Job Success</p>
+          <p className="small-text light-gray">Job Success</p>
         </Col>
         {getRatingData(talent.rating)}
       </Col>
       <Col md={12} className="rating-box">
-        <p className="mini-font mb-0 light-gray">
+        <p className="small-text light-gray">
           <b>Cover Letter -</b> {talent.description}
         </p>
       </Col>

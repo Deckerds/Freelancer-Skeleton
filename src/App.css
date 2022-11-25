@@ -21,26 +21,24 @@ input {
   margin-bottom: 0;
 }
 
+.top-text {
+  font-size: 0.9rem !important;
+  margin-bottom: 0;
+}
+
 .default-text {
-  font-size: 0.85rem;
+  font-size: 0.85rem !important;
   margin-bottom: 0;
 }
 
 .small-text {
-  font-size: 0.75rem;
+  font-size: 0.75rem !important;
   margin-bottom: 0;
-}
-
-.small-font {
-  font-size: 0.9rem !important;
-}
-
-.mini-font {
-  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .light-gray {
-  color: rgb(150, 146, 146);
+  color: #adb5db;
 }
 
 .font-weight-bold {

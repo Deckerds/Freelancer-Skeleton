@@ -89,7 +89,7 @@ const ScreenFour = ({
               }}
               onChange={(e) => setSingleBudget(e.target.value)}
             />
-            <p className="mini-font light-gray mt-3">
+            <p className="small-text light-gray mt-3">
               You will have the option to create milestones which divide your
               project into manageable phases.
             </p>
@@ -127,10 +127,10 @@ const ScreenFour = ({
                 />
               </Col>
             </Col>
-            <p className="mini-font light-gray mt-3">
+            <p className="small-text light-gray mt-3">
               This is the average rate for similar projects.
             </p>
-            <p className="mb-3 small-font">
+            <p className="mb-3 default-text">
               Professionals tend to charge <b>$10 - $25</b>/hour (USD) for
               illustration projects like yours. Experts may charge higher rates.
             </p>

@@ -63,7 +63,7 @@ const ScreenSix = ({
           md={12}
           className="d-flex justify-content-between align-items-center mb-3"
         >
-          <p className="small-font mb-0">{description}</p>
+          <p className="default-text">{description}</p>
           <EditButton />
         </Col>
         <Divider style={{ background: "black" }} />
@@ -72,7 +72,7 @@ const ScreenSix = ({
           md={12}
           className="d-flex justify-content-between  align-items-center mb-3"
         >
-          <p className="small-font  mb-0">Illustration</p>
+          <p className="default-text">Illustration</p>
           <EditButton />
         </Col>
         <Col
@@ -94,7 +94,7 @@ const ScreenSix = ({
         >
           <Col>
             <h6 className="mb-0">Scope</h6>
-            <p className="small-font">{`${selectedValue}, ${scope}, ${expertise}`}</p>
+            <p className="default-text">{`${selectedValue}, ${scope}, ${expertise}`}</p>
           </Col>
           <EditButton />
         </Col>
@@ -104,7 +104,7 @@ const ScreenSix = ({
         >
           <Col>
             <h6 className="mb-0">Budget</h6>
-            <p className="small-font">
+            <p className="default-text">
               {budgetType === "Hourly"
                 ? `$${budgetFrom} - $${budgetTo}/hr`
                 : `$${singleBudget}`}

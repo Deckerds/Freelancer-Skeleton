@@ -29,20 +29,20 @@ const InviteBox = ({
       md={12}
     >
       <Col md={12} className="d-flex">
-        <Col md={10} className="d-flex align-items-start">
+        <Col md={10} className="d-flex align-items-start mb-3">
           <UserAvatar
             alt={talent.name}
             src={talent.profile}
             availability={talent.availability}
           />
           <div className="ms-3">
-            <p className="mb-0">
+            <p className="top-text">
               {getHighlightedText(talent.name, highlightedText)}
             </p>
-            <p className="mt-1 small-font light-gray restrict-mobile-display">
+            <p className="default-text light-gray restrict-mobile-display mb-1">
               {getHighlightedText(talent.description, highlightedText)}
             </p>
-            <p className="small-font">{talent.price}</p>
+            <p className="default-text">{talent.price}</p>
           </div>
         </Col>
         <Col md={2} className="d-flex justify-content-end align-items-start">
@@ -61,11 +61,11 @@ const InviteBox = ({
       <Col md={12}>
         <div className="d-flex align-items-center">
           <LibraryAddCheckIcon style={{ fontSize: "0.9rem" }} color="success" />
-          <p className="mb-0 small-font light-gray ms-1 text-success">
+          <p className="default-text light-gray ms-1 text-success">
             {talent.completed}
           </p>
         </div>
-        <p className="mb-0 small-font">Has 16 relevant skills to your job</p>
+        <p className="default-text">Has 16 relevant skills to your job</p>
       </Col>
       <Col md={12} className="mt-2">
         {talent.chips.map((chip, index) => (

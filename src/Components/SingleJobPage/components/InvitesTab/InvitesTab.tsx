@@ -91,7 +91,7 @@ const InvitesTab = ({ job }) => {
           activeKey={tab}
           onSelect={(tab) => setTab(tab)}
           defaultActiveKey="search"
-          className="small-font mb-4 mx-3 my-3"
+          className="default-text mb-4 mx-3 my-3"
         >
           <Tab eventKey="search" title="Search">
             <Col md={12} className="search-container">
@@ -136,7 +136,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         Any amount earned
                       </p>
                     </div>
@@ -150,7 +150,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         $1+ earned
                       </p>
                     </div>
@@ -164,7 +164,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text mb-0 text-start">
                         $100+ earned
                       </p>
                     </div>
@@ -178,7 +178,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         $1k+ earned
                       </p>
                     </div>
@@ -196,7 +196,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text text-start">
                         TOP RATED
                       </p>
                     </div>
@@ -210,7 +210,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         TOP RATED PLUS
                       </p>
                     </div>
@@ -224,7 +224,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         80% & up
                       </p>
                     </div>
@@ -238,7 +238,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         90% & up
                       </p>
                     </div>
@@ -256,7 +256,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         Any hourly rate
                       </p>
                     </div>
@@ -270,7 +270,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $10 and below
                       </p>
                     </div>
@@ -284,7 +284,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $10 - $30
                       </p>
                     </div>
@@ -298,7 +298,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         $30 - $60
                       </p>
                     </div>
@@ -316,7 +316,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         Any hours
                       </p>
                     </div>
@@ -330,7 +330,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         1+ hours billed
                       </p>
                     </div>
@@ -344,7 +344,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         100+ hours billed
                       </p>
                     </div>
@@ -358,7 +358,7 @@ const InvitesTab = ({ job }) => {
                           },
                         }}
                       />
-                      <p className="ms-1 light-gray mini-font mb-0 text-start">
+                      <p className="ms-1 light-gray small-text  text-start">
                         1,000+ hours billed
                       </p>
                     </div>
@@ -379,7 +379,7 @@ const InvitesTab = ({ job }) => {
           <Tab eventKey="invited" title="Invited Freelancers">
             <Col md={12} className="no-data">
               <p className="text-center">No invited freelancers yet</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Invite top candidates before they're booked.
               </p>
             </Col>
@@ -387,7 +387,7 @@ const InvitesTab = ({ job }) => {
           <Tab eventKey="hires" title="My Hires">
             <Col md={12} className="no-data">
               <p className="text-center">You haven’t hired anyone yet</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Search for freelancers who can help you get work done.
               </p>
             </Col>
@@ -395,7 +395,7 @@ const InvitesTab = ({ job }) => {
           <Tab eventKey="saved" title="Saved">
             <Col md={12} className="no-data">
               <p className="text-center">You haven’t saved anyone yet</p>
-              <p className="text-center light-gray small-font">
+              <p className="text-center light-gray default-text">
                 Select the heart icon to save your favorite talent and agencies
                 to custom lists. Go to Talent to find all your saves and lists.
               </p>

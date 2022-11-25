@@ -20,7 +20,7 @@ const JobView = ({ job }) => {
       <Col xs={12} md={8} className="border-right">
         <Col className="section" md={12}>
           <h6 className="mb-0">Front-End Development</h6>
-          <p className="mb-0 mini-font light-gray mt-1">
+          <p className=" small-text light-gray mt-1">
             {`Posted ${moment(new Date(job.createdDate)).fromNow()}`}
           </p>
           <div className="d-flex align-items-center mt-4">
@@ -31,7 +31,7 @@ const JobView = ({ job }) => {
           </div>
         </Col>
         <Col className="section d-lg-flex" md={12}>
-          <p className="small-font mb-0">{job.description}</p>
+          <p className="default-text ">{job.description}</p>
         </Col>
         <Col className="section d-lg-flex" md={12}>
           <Col className="d-flex align-items-start" xs={12} md={4}>
@@ -40,8 +40,8 @@ const JobView = ({ job }) => {
               className="me-2"
             />
             <div>
-              <p className="mb-0 small-font">{job.budget}</p>
-              <p className="mb-0 sub-para light-gray">{job.budgetType}</p>
+              <p className=" default-text">{job.budget}</p>
+              <p className="sub-para light-gray">{job.budgetType}</p>
             </div>
           </Col>
           <Col className="d-flex align-items-start mb-2" xs={12} md={4}>
@@ -50,22 +50,22 @@ const JobView = ({ job }) => {
               className="me-2"
             />
             <div>
-              <p className="mb-0 small-font">{job.scope}</p>
-              <p className="mb-0 sub-para light-gray">Project Length</p>
+              <p className=" default-text">{job.scope}</p>
+              <p className="sub-para light-gray">Project Length</p>
             </div>
           </Col>
           <Col className="d-flex align-items-start mb-2" xs={12} md={4}>
             <PsychologyIcon style={{ fontSize: "1.25rem" }} className="me-2" />
             <div>
-              <p className="mb-0 small-font">{job.expertise}</p>
-              <p className="mb-0 sub-para light-gray">
+              <p className=" default-text">{job.expertise}</p>
+              <p className="sub-para light-gray">
                 I am looking for a mix of experience and value
               </p>
             </div>
           </Col>
         </Col>
         <Col className="section d-lg-flex" md={12}>
-          <p className="small-font mb-0">
+          <p className="default-text ">
             <b>Project Type:</b> Ongoing Project
           </p>
         </Col>
@@ -76,13 +76,13 @@ const JobView = ({ job }) => {
         </Col>
         <Col className="section" md={12}>
           <h6 className="mb-3">Activity on this job</h6>
-          <p className="light-gray small-font">Proposals: 20 to 50</p>
-          <p className="light-gray small-font">
+          <p className="light-gray default-text">Proposals: 20 to 50</p>
+          <p className="light-gray default-text">
             Last viewed by client: 4 minutes ago
           </p>
-          <p className="light-gray small-font">Interviewing: 0</p>
-          <p className="light-gray small-font">Invites sent: 0</p>
-          <p className="light-gray small-font">Unanswered invites: 0</p>
+          <p className="light-gray default-text">Interviewing: 0</p>
+          <p className="light-gray default-text">Invites sent: 0</p>
+          <p className="light-gray default-text">Unanswered invites: 0</p>
         </Col>
       </Col>
       <Col xs={12} md={4}>
@@ -122,16 +122,16 @@ const JobView = ({ job }) => {
           <h6>About the client</h6>
           <div className="d-flex align-items-center mb-3 mt-3">
             <VerifiedIcon style={{ fontSize: "1rem" }} color="primary" />
-            <p className="mb-0 ms-1 small-font ">Payment Verified</p>
+            <p className=" ms-1 default-text ">Payment Verified</p>
           </div>
           <div className="d-flex align-items-center mb-2">
             <LocationOnIcon style={{ fontSize: "1rem" }} />
-            <p className="mb-0 ms-1 small-font ">Sri Lanka</p>
+            <p className=" ms-1 default-text ">Sri Lanka</p>
           </div>
           <p className="mb-2 sub-para light-gray">
             <b>5</b> Jobs posted
           </p>
-          <p className="mb-0 sub-para light-gray">Member since Sep 15, 2020</p>
+          <p className="sub-para light-gray">Member since Sep 15, 2020</p>
         </Col>
         <Col className="section-last" md={12}>
           <h6>Job link</h6>

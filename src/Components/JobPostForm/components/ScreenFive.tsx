@@ -31,8 +31,8 @@ const ScreenFive = ({
           rows={3}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <p className="mini-font light-gray mt-4 mb-0">Need help?</p>
-        <p className="mt-2 small-font mb-0">
+        <p className="small-text light-gray mt-4">Need help?</p>
+        <p className="mt-2 default-text">
           See examples of effective job descriptions
         </p>
         <CommonButton btnBorder text="Attach File" className="mt-2" />

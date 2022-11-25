@@ -58,9 +58,9 @@ const Profile = () => {
               <Col md={2} className="mt-2">
                 <p className="mb-0 align-self-center">100%</p>
                 <LinearProgress variant="determinate" value={100} />
-                <p className="mb-0 mini-font light-gray">Job Success</p>
+                <p className="small-text light-gray">Job Success</p>
               </Col>
-              <p className="small-font mb-0 ms-5">
+              <p className="default-text ms-5">
                 <MilitaryTechIcon
                   style={{ fontSize: "1.5rem", color: "#f1367a" }}
                 />
@@ -78,7 +78,7 @@ const Profile = () => {
             <Col md={12} className="d-flex border-bottom">
               <Col md={6} className="section-padding">
                 <h6>$3k+</h6>
-                <p className="mini-font light-gray">Total Earnings</p>
+                <p className="small-text light-gray">Total Earnings</p>
               </Col>
               <Col
                 md={6}
@@ -86,33 +86,33 @@ const Profile = () => {
               >
                 <div>
                   <h6>3</h6>
-                  <p className="mini-font light-gray">Total Jobs</p>
+                  <p className="small-text light-gray">Total Jobs</p>
                 </div>
               </Col>
             </Col>
             <Col md={12} className="section-padding">
               <Col className="mt-2">
                 <h6>Hours per week</h6>
-                <p className="small-font light-gray">
+                <p className="default-text light-gray">
                   As Needed - Open to Offers
                 </p>
               </Col>
               <Col className="mt-5">
                 <h6>Languages</h6>
-                <p className="small-font light-gray">
+                <p className="default-text light-gray">
                   English: Native or Bilingual
                 </p>
               </Col>
               <Col className="mt-5">
                 <h6>Verifications</h6>
-                <p className="small-font light-gray mb-0">
+                <p className="default-text light-gray">
                   Phone Number: <b>Verified</b>
                   <VerifiedIcon
                     style={{ fontSize: "0.9rem" }}
                     color="primary"
                   />
                 </p>
-                <p className="small-font light-gray mb-0">
+                <p className="default-text light-gray">
                   ID: <b>Verified</b>
                   <VerifiedIcon
                     style={{ fontSize: "0.9rem" }}
@@ -122,14 +122,12 @@ const Profile = () => {
               </Col>
               <Col className="mt-5">
                 <h6>Education</h6>
-                <p className="small-font mb-0">Emerson College</p>
-                <p className="small-font light-gray mb-2">
+                <p className="default-text">Emerson College</p>
+                <p className="default-text light-gray mb-2">
                   Master of Arts (MA), Publishing 2016-2018
                 </p>
-                <p className="small-font mb-0">
-                  The University of South Dakota
-                </p>
-                <p className="small-font light-gray mb-0">
+                <p className="default-text">The University of South Dakota</p>
+                <p className="default-text light-gray">
                   Bachelor of Science (BS), English 2012-2016
                 </p>
               </Col>
@@ -143,7 +141,7 @@ const Profile = () => {
               <p className="mb-0 ms-5">$29.90/hr</p>
             </Col>
             <Col className="section-padding border-bottom">
-              <p className="small-font light-gray">
+              <p className="default-text light-gray">
                 Looking for someone to join you on your writing journey? I am an
                 experienced editor, specializing in Developmental and
                 Substantive editing, with extensive knowledge of the publishing
@@ -162,7 +160,7 @@ const Profile = () => {
                 activeKey={tab}
                 onSelect={(tab) => setTab(tab)}
                 defaultActiveKey="completed"
-                className="small-font mb-4"
+                className="default-text mb-4"
               >
                 <Tab eventKey="completed" title="Completed jobs (2)">
                   <Col className="border-bottom pb-3 mb-3">
@@ -178,16 +176,14 @@ const Profile = () => {
                         precision={0.5}
                         size="small"
                       />
-                      <p className="small-font ms-3 mb-0">4.40</p>
-                      <p className="mini-font light-gray mb-0 ms-3">
+                      <p className="default-text ms-3">4.40</p>
+                      <p className="small-text light-gray ms-3">
                         Dec 4, 2020 - Oct 29, 2021
                       </p>
                     </Col>
                     <Col className="d-flex align-items-center mt-3">
-                      <p className="small-font mb-0">$2,550.00</p>
-                      <p className="mini-font light-gray mb-0 ms-3">
-                        Fixed Price
-                      </p>
+                      <p className="default-text">$2,550.00</p>
+                      <p className="small-text light-gray ms-3">Fixed Price</p>
                     </Col>
                   </Col>
                   <Col>
@@ -203,16 +199,14 @@ const Profile = () => {
                         precision={0.5}
                         size="small"
                       />
-                      <p className="small-font ms-3 mb-0">5.00</p>
-                      <p className="mini-font light-gray mb-0 ms-3">
+                      <p className="default-text ms-3">5.00</p>
+                      <p className="small-text light-gray ms-3">
                         Nov 26, 2018 - May 16, 2019
                       </p>
                     </Col>
                     <Col className="d-flex align-items-center mt-3">
-                      <p className="small-font mb-0">$2000.00</p>
-                      <p className="mini-font light-gray mb-0 ms-3">
-                        Fixed Price
-                      </p>
+                      <p className="default-text">$2000.00</p>
+                      <p className="small-text light-gray ms-3">Fixed Price</p>
                     </Col>
                   </Col>
                 </Tab>

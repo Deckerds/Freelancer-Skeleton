@@ -45,7 +45,7 @@ const Login = () => {
             }}
           />
           {emailError && (
-            <p className="mb-0 small-font text-danger">{emailError}</p>
+            <p className="default-text text-danger">{emailError}</p>
           )}
           <CommonButton
             className="mt-3"

@@ -30,7 +30,7 @@ const ScreenThree = ({
           />
           <h6 className="mb-0">Large</h6>
         </div>
-        <p className="small-font light-gray ms-4">
+        <p className="default-text light-gray ms-4">
           Longer term or complex initiatives (ex. develop and execute a brand
           strategy (i.e., graphics, positioning))
         </p>
@@ -51,7 +51,7 @@ const ScreenThree = ({
             />
             <h6 className="mb-0">Medium</h6>
           </div>
-          <p className="small-font light-gray ms-4">
+          <p className="default-text light-gray ms-4">
             Well-defined projects (ex. design business rebrand package (i.e.,
             logos, icons))
           </p>
@@ -72,7 +72,7 @@ const ScreenThree = ({
             />
             <h6 className="mb-0">Small</h6>
           </div>
-          <p className="small-font light-gray ms-4">
+          <p className="default-text light-gray ms-4">
             Quick and straightforward tasks (ex. create logo for a new product)
           </p>
         </div>
@@ -92,7 +92,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">More than 6 months</p>
+              <p className="default-text light-gray">More than 6 months</p>
             </div>
             <div className="d-flex align-items-center">
               <Radio
@@ -107,7 +107,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">3 to 6 months</p>
+              <p className="default-text light-gray">3 to 6 months</p>
             </div>
             <div className="d-flex align-items-center">
               <Radio
@@ -122,7 +122,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">1 to 3 months</p>
+              <p className="default-text light-gray">1 to 3 months</p>
             </div>
           </div>
         )}
@@ -142,7 +142,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">Entry</p>
+              <p className="default-text light-gray">Entry</p>
             </div>
             <div className="d-flex align-items-center">
               <Radio
@@ -157,7 +157,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">Intermediate</p>
+              <p className="default-text light-gray">Intermediate</p>
             </div>
             <div className="d-flex align-items-center">
               <Radio
@@ -172,7 +172,7 @@ const ScreenThree = ({
                   },
                 }}
               />
-              <p className="mb-0 small-font light-gray">Expert</p>
+              <p className="default-text light-gray">Expert</p>
             </div>
           </div>
         )}

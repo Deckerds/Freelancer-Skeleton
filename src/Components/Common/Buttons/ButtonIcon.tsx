@@ -37,7 +37,7 @@ const ButtonIcon = (props: IconButtonProps) => {
       onClick={() => props.onClick()}
     >
       <img className="icon" src={props.icon} alt="" />
-      <p className="mb-0 text-button">{props.text}</p>
+      <p className="text-button">{props.text}</p>
     </Button>
   );
 };
