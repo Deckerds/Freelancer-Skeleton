@@ -31,7 +31,7 @@ const Homepage = () => {
       .catch((err) => {
         navigate("/login");
       });
-  }, []);
+  }, [navigate]);
 
   return (
     <Col className="d-lg-flex home-container">
