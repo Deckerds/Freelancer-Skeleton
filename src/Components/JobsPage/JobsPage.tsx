@@ -17,6 +17,7 @@ import { useNavigate } from "react-router";
 import CommonButton from "../Common/Buttons/CommonButton";
 import { getHighlightedText, sortByDate } from "src/common/commonFunctions";
 
+
 const JobsPage = () => {
   const navigate = useNavigate();
   const [jobs, setJobs] = useState([]);

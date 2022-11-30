@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useNavigate } from "react-router";
 import { InputAdornment, TextField, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
@@ -6,9 +6,33 @@ import Layer from "../../assets/layer.png";
 import "./Homepage.css";
 import CommonButton from "../Common/Buttons/CommonButton";
 import { Col } from "reactstrap";
+import client from "src/client";
 
 const Homepage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const tokenDetails = {
+      refreshToken: localStorage.getItem("kw-poc-refreshToken"),
+      accessToken: localStorage.getItem("kw-poc-accessToken"),
+    };
+    client
+      .post("/auth/token/validate", tokenDetails)
+      .then((response) => {
+        const accessToken = response.data.accessToken;
+        const refreshToken = response.data.refreshToken;
+        if (accessToken && refreshToken) {
+          localStorage.setItem("kw-poc-accessToken", accessToken);
+          localStorage.setItem("kw-poc-refreshToken", refreshToken);
+          localStorage.setItem("isAuthorized", "true");
+        }
+        navigate("/");
+      })
+      .catch((err) => {
+        navigate("/login");
+      });
+  }, []);
+
   return (
     <Col className="d-flex home-container">
       <Col item xs={12} md={5} className="mt-5 ps-5">
