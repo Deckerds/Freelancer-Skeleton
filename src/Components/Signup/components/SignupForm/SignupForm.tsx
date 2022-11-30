@@ -17,7 +17,10 @@ import "./SignupForm.css";
 import ButtonIcon from "src/Components/Common/Buttons/ButtonIcon";
 import CommonButton from "src/Components/Common/Buttons/CommonButton";
 
+import client from "../../../../client";
+
 const SignupForm = () => {
+  
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -31,12 +34,45 @@ const SignupForm = () => {
   const handleClickShowPassword = () => setShowPassword(!showPassword);
   const handleMouseDownPassword = () => setShowPassword(!showPassword);
 
+  //Intergation with AWS Cognito
+  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [userGroup, setUserGroup] = useState("");
+
   useEffect(() => {
     setType(location?.pathname?.split("/")[2]);
+    setUserGroup(location.pathname.replace("/signup/", "").toUpperCase());
   }, [location]);
 
   const changeCountry = (e: any) => {
     setCountry(e.target.value);
+  };
+
+  const handleFormRequest = () => {
+    addUser({
+      name: name,
+      username: userName,
+      email: email,
+      password: password,
+      country: country,
+      group: userGroup,
+    });
+  };
+
+  const countryList = ["Sri Lanka", "United States", "China"];
+
+  const addUser = async (userDetails) => {
+    console.log(userDetails);
+    await client
+      .post("/auth/sign-up", userDetails)
+      .then((res) => {
+        navigate("/login");
+      })
+      .catch((err) => {
+        navigate("/signup");
+      });
   };
 
   return (
@@ -67,10 +103,20 @@ const SignupForm = () => {
           </div>
           <div className="mt-3 d-flex justify-content-between">
             <div>
-              <TextField fullWidth id={`signup-input`} placeholder="Name" />
+              <TextField
+                fullWidth
+                id={`signup-input`}
+                placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
+              />
             </div>
             <div>
-              <TextField fullWidth id={`signup-input`} placeholder="Username" />
+              <TextField
+                fullWidth
+                id={`signup-input`}
+                placeholder="Username"
+                onChange={(e) => setUserName(e.target.value)}
+              />
             </div>
           </div>
           <div className="mt-2">
@@ -78,6 +124,7 @@ const SignupForm = () => {
               fullWidth
               id={`signup-input-long`}
               placeholder="Work email address"
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -104,6 +151,7 @@ const SignupForm = () => {
                   </InputAdornment>
                 ),
               }}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="mt-2">
@@ -112,16 +160,17 @@ const SignupForm = () => {
               id={`signup-input-long`}
               displayEmpty
               value={country}
-              defaultValue=""
               style={{ height: "2.75rem" }}
               onChange={(e) => changeCountry(e)}
             >
-              <MenuItem selected value="">
-                Sri Lanka
+              <MenuItem disabled value="">
+                <em>Select Country</em>
               </MenuItem>
-              <MenuItem selected value="India">
-                India
-              </MenuItem>
+              {countryList.map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
             </Select>
           </div>
           <div className="d-flex align-items-center mt-3">
@@ -145,7 +194,11 @@ const SignupForm = () => {
               the User Agreement and Privacy Policy .
             </p>
           </div>
-          <CommonButton className="mt-3" text="Create my account" />
+          <CommonButton
+            className="mt-3"
+            text="Create my account"
+            onClick={handleFormRequest}
+          />
           <p className="login-text">
             Already have an account?{" "}
             <Link

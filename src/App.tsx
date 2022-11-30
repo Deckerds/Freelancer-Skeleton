@@ -16,40 +16,83 @@ import Signup from "./Components/Signup/Signup";
 import SendInvite from "./Components/SingleJobPage/components/InvitesTab/SendInvite";
 import SingleMessageView from "./Components/SingleJobPage/components/ProposalTab/SingleMessageView";
 import SingleJobPage from "./Components/SingleJobPage/SingleJobPage";
+import { Provider } from "react-redux";
+import { persistor, store } from "./redux/store";
+import { PersistGate } from "redux-persist/integration/react";
+import PrivateRoutes from "./helpers/PrivateRoutes";
 
 const App = () => {
   return (
-    <Fragment>
-      <Router>
-        <ScrollToTop />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signup/:type" element={<SignupForm />} />
-          <Route path="/signup/:type" element={<SignupForm />} />
-          <Route path="/job-post" element={<JobPostForm />} />
-          <Route path="/jobs" element={<JobsPage />} />
-          <Route path="/jobs/single-view/:jobId" element={<SingleJobPage />} />
-          <Route path="/proposal-submit/:jobId" element={<ProposalSubmit />} />
-          <Route
-            path="/proposal-details/:jobId"
-            element={<ProposalDetails />}
-          />
-          <Route
-            path="/proposal-message-view/:jobId"
-            element={<SingleMessageView />}
-          />
-          <Route path="/invite-single-view/:jobId" element={<SendInvite />} />
-          <Route
-            path="/invite-freelancer-view/:jobId"
-            element={<InvitationSingleView />}
-          />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-      </Router>
-    </Fragment>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <Fragment>
+          <Router>
+            <ScrollToTop />
+            <Header />
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/signup/:type" element={<SignupForm />} />
+              <Route path="/signup/:type" element={<SignupForm />} />
+
+              <Route
+                path="/job-post"
+                element={
+                  <PrivateRoutes>
+                    <JobPostForm />
+                  </PrivateRoutes>
+                }
+              />
+              <Route
+                path="/jobs"
+                element={
+                  <PrivateRoutes>
+                    <JobsPage />
+                  </PrivateRoutes>
+                }
+              />
+              <Route
+                path="/jobs/single-view/:jobId"
+                element={
+                  <PrivateRoutes>
+                    <SingleJobPage />
+                  </PrivateRoutes>
+                }
+              />
+              <Route
+                path="/profile"
+                element={
+                  <PrivateRoutes>
+                    <Profile />
+                  </PrivateRoutes>
+                }
+              />
+              <Route
+                path="/proposal-submit/:jobId"
+                element={<ProposalSubmit />}
+              />
+              <Route
+                path="/proposal-details/:jobId"
+                element={<ProposalDetails />}
+              />
+              <Route
+                path="/proposal-message-view/:jobId"
+                element={<SingleMessageView />}
+              />
+              <Route
+                path="/invite-single-view/:jobId"
+                element={<SendInvite />}
+              />
+              <Route
+                path="/invite-freelancer-view/:jobId"
+                element={<InvitationSingleView />}
+              />
+            </Routes>
+          </Router>
+        </Fragment>
+      </PersistGate>
+    </Provider>
   );
 };
 

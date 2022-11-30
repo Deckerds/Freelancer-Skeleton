@@ -6,6 +6,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./Header.css";
 import { Badge, Divider, IconButton, Menu, MenuItem } from "@mui/material";
 import CommonButton from "../Common/Buttons/CommonButton";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,6 +14,8 @@ const Header = () => {
 
   const [type, setType] = useState("");
   const [invitations, setInvitations] = useState([]);
+
+  const state = useSelector((state: any) => state.loginUser.user.name);
 
   useEffect(() => {
     setType(location?.pathname?.split("/")[2]);
@@ -111,16 +114,31 @@ const Header = () => {
             type !== "freelancer" &&
             localStorage.getItem("isAuth") !== "true" && (
               <Fragment>
-                <p
-                  onClick={() => navigate("/login")}
-                  className="nav-item default-text"
-                >
-                  Log In
-                </p>
-                <CommonButton
-                  onClick={() => navigate("/signup")}
-                  text="Sign Up"
-                />
+                <p className="nav-item default-text">Hi,{state ? state : ""}</p>
+                {localStorage.getItem("isAuthorized") === "true" ? (
+                  <p
+                    onClick={() => {
+                      navigate("/login");
+                      localStorage.clear();
+                    }}
+                    className="nav-item default-text"
+                  >
+                    Log Out
+                  </p>
+                ) : (
+                  <>
+                    <p
+                      onClick={() => navigate("/login")}
+                      className="nav-item default-text"
+                    >
+                      Log In
+                    </p>
+                    <CommonButton
+                      onClick={() => navigate("/signup")}
+                      text="Sign Up"
+                    />
+                  </>
+                )}
               </Fragment>
             )}
           {type === "client" && (
