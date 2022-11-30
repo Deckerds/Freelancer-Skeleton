@@ -7,8 +7,10 @@ import { Tab, Tabs } from "react-bootstrap";
 import { allTalents } from "src/common/hardcodes";
 import "../../SingleJobPage.css";
 import ProposalBox from "src/Components/Common/TalentDetails/ProposalBox";
+import { useMediaQuery } from "react-responsive";
 
 const ProposalTab = ({ job }) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [talents, setTalents] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [highlightedText, setHighlightedText] = useState("");
@@ -80,7 +82,7 @@ const ProposalTab = ({ job }) => {
                 value={searchKeyword || ""}
                 onChange={(e) => setSearchKeyword(e.target.value)}
                 className="search-bar"
-                style={{ width: "50%" }}
+                style={{ width: `${isMobile ? "70%" : "50%"}` }}
                 InputProps={{
                   endAdornment: (
                     <IconButton
@@ -99,6 +101,8 @@ const ProposalTab = ({ job }) => {
                 className="ms-3"
                 text="Filters"
               />
+            </Col>
+            {!isMobile && (
               <Col className="d-flex align-items-center justify-content-end">
                 <p className="default-text  me-3">Sort:</p>
                 <Select
@@ -131,7 +135,7 @@ const ProposalTab = ({ job }) => {
                   </MenuItem>
                 </Select>
               </Col>
-            </Col>
+            )}
             {isFiltersOpen && (
               <Col className="filters-container" md={12}>
                 <Col md={12} className="d-flex justify-content-between">
@@ -385,6 +389,8 @@ const ProposalTab = ({ job }) => {
                   length={talents?.length}
                   index={index}
                   highlightedText={highlightedText}
+                  jobId={job.id}
+                  key={talent.id}
                 />
               ))}
             {talents?.length === 0 && (

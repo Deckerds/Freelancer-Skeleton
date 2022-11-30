@@ -27,8 +27,8 @@ const Login = () => {
     if (email === "") {
       setEmailError("Email Required");
     } else {
-      // localStorage.setItem("isAuth", "true");
-      // navigate("/");
+      localStorage.setItem("isAuth", "true");
+      navigate("/");
       togglePassword();
     }
   };

@@ -357,10 +357,12 @@ const InvitesTab = ({ job }) => {
             {talents?.length > 0 &&
               talents.map((talent, index) => (
                 <InviteBox
+                  key={talent.id}
                   talent={talent}
                   index={index}
                   length={talents.length}
                   highlightedText={highlightedText}
+                  jobId={job.id}
                 />
               ))}
           </Tab>

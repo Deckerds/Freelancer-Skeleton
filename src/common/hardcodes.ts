@@ -19,7 +19,7 @@ export const allTalents = [
     id: "t002",
     name: "Kristina L",
     country: "Ethiopia",
-    shortDesc: "Translator",
+    shortDesc: "Translator | Proofreader | Japanese | German",
     description:
       "I'm a native German who grew up bilingual (German/Russian) with international work experience in the Hospitality Industry.",
     chips: ["Translation", "Editor", "English", "German"],
@@ -64,6 +64,24 @@ export const allTalents = [
     success: 100,
   },
 ];
+
+export const hardCodeUser = {
+  id: "t001",
+  name: "Alejandro Arnaez",
+  shortDesc: "Full Stack | React | React Native | Node | Developer",
+  description:
+    "Highly Rated Quickbase app developer with Expert Builder certification and more than 5 years experience in the platform. Detail-oriented Business Analyst and Technology Coach.",
+  chips: [
+    { id: 1, name: "QuickBase" },
+    { id: 2, name: "HTML" },
+    { id: 3, name: "JavaScript" },
+  ],
+  completed: "Completed 37 Quickbase jobs on Upwork",
+  price: "$60.00 /hr",
+  profile:
+    "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  availability: "online",
+};
 
 export const jobCategories = [
   {

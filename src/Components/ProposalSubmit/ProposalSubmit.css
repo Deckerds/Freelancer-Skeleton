@@ -1,0 +1,11 @@
+.shield-image {
+  object-fit: contain;
+  height: 5rem;
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.attach-box {
+  border: 1px dashed #e0e0e0;
+}

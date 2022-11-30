@@ -6,15 +6,26 @@ import { LinearProgress } from "@mui/material";
 import MilitaryTechIcon from "@mui/icons-material/MilitaryTech";
 import UserAvatar from "../UserAvatar/UserAvatar";
 import Chips from "../Chips/Chips";
+import { useNavigate } from "react-router";
+import { useMediaQuery } from "react-responsive";
 
 interface TalentBox {
   talent: any;
   length: number;
   index: number;
   highlightedText: string;
+  jobId?: string | number;
 }
 
-const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
+const ProposalBox = ({
+  talent,
+  length,
+  index,
+  highlightedText,
+  jobId,
+}: TalentBox) => {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const navigate = useNavigate();
   const getRatingData = (rating) => {
     if (rating === "top") {
       return (
@@ -34,7 +45,6 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
   };
   return (
     <Col
-      key={talent.id}
       className={`box-hover talent-box-section ${
         index === length - 1 && "mb-3"
       } border-bottom pb-3`}
@@ -50,23 +60,23 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
           <p className="top-text">
             {getHighlightedText(talent.name, highlightedText)}
           </p>
-          <p className="default-text restrict-mobile-display">
-            {talent.shortDesc}
-          </p>
+          <p className="default-text">{talent.shortDesc}</p>
           <p className="small-text light-gray">{talent.country}</p>
         </div>
-        <div className="d-flex ms-auto">
-          <CommonButton
-            btnBorder
-            // onClick={() => sendInvite()}
-            className="me-3"
-            text="Messages"
-          />
-          <CommonButton
-            // onClick={() => sendInvite()}
-            text="Hire"
-          />
-        </div>
+        {!isMobile && (
+          <div className="d-flex ms-auto">
+            <CommonButton
+              btnBorder
+              onClick={() => navigate(`/proposal-message-view/${jobId}`)}
+              className="me-3"
+              text="Messages"
+            />
+            <CommonButton
+              onClick={() => navigate(`/invite-single-view/${jobId}`)}
+              text="Hire"
+            />
+          </div>
+        )}
       </Col>
       <Col md={12} className="rating-box d-flex justify-content-between">
         <p className="default-text">{talent.price}</p>
@@ -87,6 +97,21 @@ const ProposalBox = ({ talent, length, index, highlightedText }: TalentBox) => {
           <Chips key={index} label={chip} />
         ))}
       </Col>
+      {isMobile && (
+        <Col md={12} className="d-flex justify-content-center mt-3">
+          <CommonButton
+            btnBorder
+            onClick={() => navigate(`/proposal-message-view/${jobId}`)}
+            className="me-3 w-100"
+            text="Messages"
+          />
+          <CommonButton
+            className="w-100"
+            onClick={() => navigate(`/invite-single-view/${jobId}`)}
+            text="Hire"
+          />
+        </Col>
+      )}
     </Col>
   );
 };

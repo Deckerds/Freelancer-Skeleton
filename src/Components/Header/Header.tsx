@@ -2,8 +2,9 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate, useLocation } from "react-router";
 import LogoIcon from "../../assets/logo.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./Header.css";
-import { Divider, IconButton, Menu, MenuItem } from "@mui/material";
+import { Badge, Divider, IconButton, Menu, MenuItem } from "@mui/material";
 import CommonButton from "../Common/Buttons/CommonButton";
 
 const Header = () => {
@@ -11,6 +12,7 @@ const Header = () => {
   const location = useLocation();
 
   const [type, setType] = useState("");
+  const [invitations, setInvitations] = useState([]);
 
   useEffect(() => {
     setType(location?.pathname?.split("/")[2]);
@@ -26,6 +28,28 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const [anchorElNotifications, setAnchorElNotifications] =
+    React.useState<null | HTMLElement>(null);
+  const openNotifications = Boolean(anchorElNotifications);
+
+  const handleClickNotifications = (event: React.MouseEvent<any>) => {
+    setAnchorElNotifications(event.currentTarget);
+  };
+
+  const handleCloseNotifications = () => {
+    setAnchorElNotifications(null);
+  };
+
+  const getAllInvitations = () => {
+    const allInvitations =
+      JSON.parse(localStorage.getItem("invitations")) || [];
+    setInvitations([...allInvitations]);
+  };
+
+  useEffect(() => {
+    getAllInvitations();
+  }, []);
 
   return (
     <header className="header-main" style={{ position: "sticky", top: 0 }}>
@@ -54,7 +78,7 @@ const Header = () => {
             onClick={() => navigate("/jobs")}
             className="default-text nav-text"
           >
-            Categories
+            Jobs
           </p>
           <Divider
             className="mx-3"
@@ -137,6 +161,36 @@ const Header = () => {
           )}
           {localStorage.getItem("isAuth") === "true" && (
             <Fragment>
+              <Badge
+                className="cursor-pointer"
+                onClick={handleClickNotifications}
+                color="error"
+                badgeContent={invitations.length}
+              >
+                <NotificationsIcon color="primary" />
+              </Badge>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorElNotifications}
+                open={openNotifications}
+                onClose={handleCloseNotifications}
+                MenuListProps={{
+                  "aria-labelledby": "basic-button",
+                }}
+              >
+                {invitations.map((inv) => (
+                  <MenuItem
+                    className="default-text py-3 border-bottom"
+                    key={inv.id}
+                    onClick={() => {
+                      handleCloseNotifications();
+                      navigate(`/invite-freelancer-view/${inv.jobId}`);
+                    }}
+                  >
+                    {inv.desc}
+                  </MenuItem>
+                ))}
+              </Menu>
               <IconButton
                 onClick={handleClick}
                 color="primary"

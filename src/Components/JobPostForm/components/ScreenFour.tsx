@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Col } from "reactstrap";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import LocalOfferIcon from "@mui/icons-material/LocalOffer";
@@ -44,7 +44,6 @@ const ScreenFour = ({
                 }}
               />
             </div>
-
             <p className="budget-text">Hourly rate</p>
           </div>
           <div

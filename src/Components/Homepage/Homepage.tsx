@@ -10,7 +10,7 @@ import { Col } from "reactstrap";
 const Homepage = () => {
   const navigate = useNavigate();
   return (
-    <Col className="d-flex home-container">
+    <Col className="d-lg-flex home-container">
       <Col xs={12} md={5} className="mt-5 ps-5">
         <p
           style={{
@@ -75,7 +75,7 @@ const Homepage = () => {
         )}
         <Col xs={12} md={12} className="mt-5" style={{ marginBottom: "8rem" }}>
           <p className="light-gray top-text">Trusted By</p>
-          <div className="d-flex align-items-center mt-1">
+          <div className="d-flex flex-wrap align-items-center mt-1">
             <img
               src="https://res.cloudinary.com/upwork-cloud-acquisition-prod/image/upload//c_fit/general/logobar/colored/microsoft.svg"
               alt=""

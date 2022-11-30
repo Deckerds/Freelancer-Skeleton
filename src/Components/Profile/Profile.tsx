@@ -11,32 +11,18 @@ import { LinearProgress } from "@mui/material";
 import Chips from "../Common/Chips/Chips";
 import { Tab, Tabs } from "react-bootstrap";
 import { StyledRating } from "src/styles/mui_styles";
+import { hardCodeUser } from "src/common/hardcodes";
+import { useMediaQuery } from "react-responsive";
 
 const Profile = () => {
-  const hardCodeUser = {
-    id: "t001",
-    name: "Alejandro Arnaez",
-    description:
-      "Highly Rated Quickbase app developer with Expert Builder certification and more than 5 years experience in the platform. Detail-oriented Business Analyst and Technology Coach.",
-    chips: [
-      { id: 1, name: "QuickBase" },
-      { id: 2, name: "HTML" },
-      { id: 3, name: "JavaScript" },
-    ],
-    completed: "Completed 37 Quickbase jobs on Upwork",
-    price: "$60.00 /hr",
-    profile:
-      "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-    availability: "online",
-  };
-
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [tab, setTab] = useState("completed");
 
   return (
-    <Col md={12} className="profile-container">
-      <Col className="profile-wrapper" md={12}>
-        <Col md={12} className="user-details-section">
-          <Col md={1}>
+    <Col md={12} className="main-container">
+      <Col className="border-container-column" md={12}>
+        <Col md={12} className="box-section d-lg-flex">
+          <Col md={1} className="mobile-profile-display">
             <UserAvatar
               alt={hardCodeUser.name}
               src={hardCodeUser.profile}
@@ -44,17 +30,17 @@ const Profile = () => {
             />
           </Col>
           <Col className="ms-2">
-            <Col className="d-flex align-items-center">
+            <Col className="d-flex mobile-profile-display align-items-center">
               <h6 className="mb-0 me-2">{hardCodeUser.name}</h6>
               <VerifiedIcon style={{ fontSize: "0.9rem" }} color="primary" />
             </Col>
-            <Col className="d-flex align-items-center mt-2">
+            <Col className="d-flex mobile-profile-display align-items-center mt-2">
               <LocationOnIcon style={{ fontSize: "1rem" }} />
               <p style={{ fontSize: "0.8rem" }} className="ms-1 mb-0">
                 {`United States - ${moment().format("HH:mm A")} local time`}
               </p>
             </Col>
-            <Col className="d-flex align-items-center">
+            <Col className="d-flex mobile-profile-display align-items-center">
               <Col md={2} className="mt-2">
                 <p className="mb-0 align-self-center">100%</p>
                 <LinearProgress variant="determinate" value={100} />
@@ -68,29 +54,32 @@ const Profile = () => {
               </p>
             </Col>
           </Col>
-          <Col className="d-flex justify-content-end">
+          <Col
+            className={
+              !isMobile
+                ? "d-flex justify-content-end"
+                : "mobile-profile-display"
+            }
+          >
             <CommonButton btnBorder text={"Hire"} />
             <CommonButton className="ms-3" text={"Invite"} />
           </Col>
         </Col>
-        <Col md={12} className="d-flex">
-          <Col md={3} className="profile-left">
+        <Col md={12} className="d-lg-flex">
+          <Col xs={12} md={3} className="border-right">
             <Col md={12} className="d-flex border-bottom">
-              <Col md={6} className="section-padding">
+              <Col md={6} className="box-section">
                 <h6>$3k+</h6>
                 <p className="small-text light-gray">Total Earnings</p>
               </Col>
-              <Col
-                md={6}
-                className="d-flex justify-content-end section-padding"
-              >
+              <Col md={6} className="d-flex justify-content-end box-section">
                 <div>
                   <h6>3</h6>
                   <p className="small-text light-gray">Total Jobs</p>
                 </div>
               </Col>
             </Col>
-            <Col md={12} className="section-padding">
+            <Col md={12} className="box-section">
               <Col className="mt-2">
                 <h6>Hours per week</h6>
                 <p className="default-text light-gray">
@@ -133,14 +122,14 @@ const Profile = () => {
               </Col>
             </Col>
           </Col>
-          <Col md={9} className="profile-right">
-            <Col className="d-flex align-items-center section-padding">
+          <Col xs={12} md={9} className="profile-right">
+            <Col className="d-flex align-items-center box-section">
               <h5 className="mb-0">
                 Experienced Writer and Developmental Editor
               </h5>
               <p className="mb-0 ms-5">$29.90/hr</p>
             </Col>
-            <Col className="section-padding border-bottom">
+            <Col className="box-section border-bottom">
               <p className="default-text light-gray">
                 Looking for someone to join you on your writing journey? I am an
                 experienced editor, specializing in Developmental and
@@ -154,7 +143,7 @@ const Profile = () => {
                 focus throughout the project lifecycle.
               </p>
             </Col>
-            <Col className="section-padding border-bottom">
+            <Col className="box-section border-bottom">
               <h5 className="mb-3">Work History</h5>
               <Tabs
                 activeKey={tab}
@@ -212,7 +201,7 @@ const Profile = () => {
                 </Tab>
               </Tabs>
             </Col>
-            <Col className="section-padding border-bottom">
+            <Col className="box-section border-bottom">
               <h6>Skills</h6>
               {hardCodeUser.chips.map((chip) => (
                 <Chips key={chip.id} label={chip.name} />

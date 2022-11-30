@@ -37,8 +37,16 @@ input {
   font-weight: 400;
 }
 
+.list-style-position {
+  list-style-position: outside;
+}
+
 .light-gray {
   color: #adb5db;
+}
+
+.theme-blue {
+  color: #1ba5d8;
 }
 
 .font-weight-bold {
@@ -47,6 +55,10 @@ input {
 
 .border-right {
   border-right: 1px solid #e0e0e0;
+}
+
+.border-left {
+  border-left: 1px solid #e0e0e0;
 }
 
 .border-bottom {
@@ -73,10 +85,13 @@ input {
 }
 
 .border-container-column {
-  display: flex;
-  flex-direction: column;
   border: 1px solid #e0e0e0;
   border-radius: 1rem;
+}
+
+.section-details {
+  margin-top: 2rem;
+  padding-left: 2rem;
 }
 
 .search-container {
@@ -103,9 +118,9 @@ input {
 }
 
 .sort-dropdown {
-  height: 2.75rem;
+  height: 2.25rem;
   font-size: 0.9rem !important;
-  width: 8rem;
+  width: 15rem;
 }
 
 .box-section {
