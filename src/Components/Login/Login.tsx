@@ -36,12 +36,17 @@ const Login = () => {
     if (email === "") {
       setEmailError(process.env.React_App_email_required);
     } else {
-      client.get(`/user/email?email=${email}`).then((response) => {
-        if (response.data.isExist) {
-          togglePassword();
-        }
-        setEmailError(process.env.React_App_email_error);
-      });
+      client
+        .get(`/user/email?email=${email}`)
+        .then((response) => {
+          if (response.data.isExist) {
+            togglePassword();
+          }
+          setEmailError(process.env.React_App_email_error);
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     }
   };
 

@@ -72,18 +72,6 @@ const InvitesTab = ({ job }) => {
     }
   }, [searchKeyword, filterTalents]);
 
-  // const sendInvite = (id: string) => {
-  //   const invitations = JSON.parse(localStorage.getItem("invitations")) || [];
-  //   const jobs = JSON.parse(localStorage.getItem("jobs")) || [];
-  //   const filteredJobs = jobs.filter((job) => Number(jobId) === job.id)[0];
-  //   invitations.push({
-  //     id: invitations?.length + 1,
-  //     invitation: `You are invited to ${filteredJobs.header} job`,
-  //     inviteTime: moment().toDate(),
-  //   });
-  //   localStorage.setItem("invitations", JSON.stringify(invitations));
-  // };
-
   return (
     <Col md={12} className="border-container">
       <Col xs={12} md={12}>
@@ -369,10 +357,12 @@ const InvitesTab = ({ job }) => {
             {talents?.length > 0 &&
               talents.map((talent, index) => (
                 <InviteBox
+                  key={talent.id}
                   talent={talent}
                   index={index}
                   length={talents.length}
                   highlightedText={highlightedText}
+                  jobId={job.id}
                 />
               ))}
           </Tab>

@@ -220,7 +220,17 @@ const JobsPage = () => {
               md={12}
               key={job.id}
             >
-              <h5>{getHighlightedText(job.header, highlightedText)}</h5>
+              <div className="d-flex justify-content-between align-items-center">
+                <h5>{getHighlightedText(job.header, highlightedText)}</h5>
+                <CommonButton
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    navigate(`/proposal-submit/${job.id}`);
+                  }}
+                  text={"Submit a proposal"}
+                />
+              </div>
+
               <p className="default-text">
                 <b>{`${job.budgetType}: ${job.budget} - `}</b>
                 {`${job.expertise} - Est. Time: ${job.scope}`}

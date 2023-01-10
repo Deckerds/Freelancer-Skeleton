@@ -1,13 +1,15 @@
 .breadcrumb-container {
   display: flex;
   justify-content: center;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
 }
 
 .breadcrumb {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  margin-right: -0.1rem !important; /* overlap borders */
+  margin-right: -0.09rem !important; /* overlap borders */
 }
 
 /* chevron navigate top section */

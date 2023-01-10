@@ -13,27 +13,35 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import PushPinIcon from "@mui/icons-material/PushPin";
 import CloseIcon from "@mui/icons-material/Close";
 import LockClockIcon from "@mui/icons-material/LockClock";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
 const JobView = ({ job }) => {
   return (
     <Col className="border-container" md={12}>
       <Col xs={12} md={8} className="border-right">
         <Col className="section" md={12}>
-          <h6 className="mb-0">Front-End Development</h6>
+          <h6 className="mb-0">{job.category}</h6>
           <p className=" small-text light-gray mt-1">
             {`Posted ${moment(new Date(job.createdDate)).fromNow()}`}
           </p>
           <div className="d-flex align-items-center mt-4">
             <LocationOnIcon color="primary" style={{ fontSize: "1rem" }} />
             <p style={{ fontSize: "0.8rem" }} className="ms-1 mb-0">
-              Worldwide
+              {job.location}
             </p>
           </div>
         </Col>
         <Col className="section d-lg-flex" md={12}>
           <p className="default-text ">{job.description}</p>
         </Col>
-        <Col className="section d-lg-flex" md={12}>
+        <Col className="section d-lg-flex flex-wrap" md={12}>
+          <Col className="d-flex align-items-start" xs={12} md={4}>
+            <AccessTimeIcon style={{ fontSize: "1.25rem" }} className="me-2" />
+            <div>
+              <p className=" default-text">{job.timeRequirement}</p>
+              <p className="sub-para light-gray">{job.budgetType}</p>
+            </div>
+          </Col>
           <Col className="d-flex align-items-start" xs={12} md={4}>
             <MonetizationOnIcon
               style={{ fontSize: "1.25rem" }}
@@ -54,7 +62,7 @@ const JobView = ({ job }) => {
               <p className="sub-para light-gray">Project Length</p>
             </div>
           </Col>
-          <Col className="d-flex align-items-start mb-2" xs={12} md={4}>
+          <Col className="d-flex align-items-start mb-2 mt-2" xs={12} md={4}>
             <PsychologyIcon style={{ fontSize: "1.25rem" }} className="me-2" />
             <div>
               <p className=" default-text">{job.expertise}</p>

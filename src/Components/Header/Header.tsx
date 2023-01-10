@@ -2,10 +2,9 @@ import React, { useState, useEffect, Fragment } from "react";
 import { useNavigate, useLocation } from "react-router";
 import LogoIcon from "../../assets/logo.png";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import MailIcon from "@mui/icons-material/Mail";
+import NotificationsIcon from "@mui/icons-material/Notifications";
 import "./Header.css";
 import { Badge, Divider, IconButton, Menu, MenuItem } from "@mui/material";
-import moment from "moment";
 import CommonButton from "../Common/Buttons/CommonButton";
 import { useSelector } from "react-redux";
 
@@ -14,23 +13,9 @@ const Header = () => {
   const location = useLocation();
 
   const [type, setType] = useState("");
-  const [invisible, setInvisible] = React.useState(false);
-
   const [invitations, setInvitations] = useState([]);
 
   const state = useSelector((state: any) => state.loginUser.user.name);
-
-  useEffect(() => {
-    setInvitations(JSON.parse(localStorage.getItem("invitations")) || []);
-  }, []);
-
-  useEffect(() => {
-    if (invitations.length > 0) {
-      setInvisible(false);
-    } else {
-      setInvisible(true);
-    }
-  }, [invitations]);
 
   useEffect(() => {
     setType(location?.pathname?.split("/")[2]);
@@ -59,6 +44,16 @@ const Header = () => {
     setAnchorElNotifications(null);
   };
 
+  const getAllInvitations = () => {
+    const allInvitations =
+      JSON.parse(localStorage.getItem("invitations")) || [];
+    setInvitations([...allInvitations]);
+  };
+
+  useEffect(() => {
+    getAllInvitations();
+  }, []);
+
   return (
     <header className="header-main" style={{ position: "sticky", top: 0 }}>
       <div className={`headerNavBar`}>
@@ -86,7 +81,7 @@ const Header = () => {
             onClick={() => navigate("/jobs")}
             className="default-text nav-text"
           >
-            Categories
+            Jobs
           </p>
           <Divider
             className="mx-3"
@@ -184,18 +179,16 @@ const Header = () => {
           )}
           {localStorage.getItem("isAuth") === "true" && (
             <Fragment>
-              <IconButton
+              <Badge
+                className="cursor-pointer"
                 onClick={handleClickNotifications}
-                color="primary"
-                aria-label="upload notifications"
-                component="label"
+                color="error"
+                badgeContent={invitations.length}
               >
-                <Badge color="error" variant="dot" invisible={invisible}>
-                  <MailIcon />
-                </Badge>
-              </IconButton>
+                <NotificationsIcon color="primary" />
+              </Badge>
               <Menu
-                id="basic-menu-2"
+                id="basic-menu"
                 anchorEl={anchorElNotifications}
                 open={openNotifications}
                 onClose={handleCloseNotifications}
@@ -203,25 +196,19 @@ const Header = () => {
                   "aria-labelledby": "basic-button",
                 }}
               >
-                {invitations.map((invite) => (
+                {invitations.map((inv) => (
                   <MenuItem
-                    key={invite.id}
+                    className="default-text py-3 border-bottom"
+                    key={inv.id}
                     onClick={() => {
                       handleCloseNotifications();
-                      navigate("/user/invitations");
+                      navigate(`/invite-freelancer-view/${inv.jobId}`);
                     }}
-                    className="d-flex flex-column border-bottom"
                   >
-                    <p className="light-gray default-text align-self-start">
-                      {invite.invitation}
-                    </p>
-                    <p className="small-text light-gray align-self-end">
-                      {moment(new Date(invite.inviteTime)).fromNow()}
-                    </p>
+                    {inv.desc}
                   </MenuItem>
                 ))}
               </Menu>
-
               <IconButton
                 onClick={handleClick}
                 color="primary"
